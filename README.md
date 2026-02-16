@@ -847,7 +847,7 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 Заходим в nftables и вписываем все порты
 
 <p align="center">
-  <img src="module2/firewall-hq.png" width="600" />
+  <img src="images/module2/firewall-hq.png" width="600" />
 </p>
 
 - Не забываем применять:
@@ -861,7 +861,7 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 Тоже заходим на nftbales, и делаем такую же настройку
 
 <p align="center">
-  <img src="module2/firewall-br.png" width="600" />
+  <img src="images/module2/firewall-br.png" width="600" />
 </p>
 
 - Не забываем применять:
