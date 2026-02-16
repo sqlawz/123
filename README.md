@@ -748,7 +748,7 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 На обоих роутерах отредактируйте файл /etc/ipsec.conf, добавив следующее:
 
 <p align="center">
-  <img src="images\module3\ipsec hq-rtr.jpg" width="600" />
+  <img src="images\module2\ipsec.png" width="600" />
 </p>
 
 Далее нужно настроить файл ipsec.secrets. Вносим туда строку:
@@ -791,7 +791,7 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 На обоих роутерах отредактируйте файл /etc/ipsec.conf, добавив следующее:
 
 <p align="center">
-  <img src="images\module3\ipsec br-rtr.jpg" width="600" />
+  <img src="images\module2\ipsec.png" width="600" />
 </p>
 
 Далее нужно настроить файл ipsec.secrets. Вносим туда строку:
@@ -824,7 +824,7 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 
 И теперь мы можем проверить это, пропишем на роутере *BR-RTR* команду:
   
-***tcpdump -i ens18 -n -p esp***
+***tcpdump -i ens192 -n -p esp***
 
 А на роутере *HQ-RTR* отправим эхо-запрос на порту в сторону branch(br-srv):
 
@@ -844,19 +844,10 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 Для выполнения этого задания нам нужно обеспечить работу только нужных протоколов, а именно: HTTP, HTTPS, DNS, NTP, ICMP. А также запретить остальные подключения из сети Интернет во внутреннюю сеть.
 
 <p align="center"><b>*HQ-RTR*</b></p>
-
-- Скачаем готовый nftables.conf с github, укажем путь для замены нашего nftables:
-> !dos2unix и curl на HQ-RTR уже скачаны!
-
-***curl -o /etc/nftables.conf https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/hq-rtr/nftables.conf***
-
-***dos2unix /etc/nftables.conf***
-
-- Проверяем содержимое файла /etc/nftables.conf:
-> !меняем префикс(маску) ip-адреса в соответствии со своим заданием!
+Заходим в nftables и вписываем все порты
 
 <p align="center">
-  <img src="picture для варинта 2/nftables-firewall-hq-rtr.png" width="600" />
+  <img src="module2/firewall-hq.png" width="600" />
 </p>
 
 - Не забываем применять:
@@ -867,21 +858,10 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 
 <p align="center"><b>*BR-RTR *</b></p>
 
-- Скачаем готовый nftables.conf с github, укажем путь для замены нашего nftables:
-
-***apt install dos2unix -y***
-
-***apt install curl -y***
-
-***curl -o /etc/nftables.conf https://raw.githubusercontent.com/shiraorie/demo2026-1/main/files/br-rtr/nftables.conf***
-
-***dos2unix /etc/nftables.conf***
-
-- Проверяем содержимое файла /etc/nftables.conf:
-> !меняем префикс(маску) ip-адреса в соответствии со своим заданием!
+Тоже заходим на nftbales, и делаем такую же настройку
 
 <p align="center">
-  <img src="picture для варинта 2/nftables-firewall-br-rtr.png" width="600" />
+  <img src="module2/firewall-br.png" width="600" />
 </p>
 
 - Не забываем применять:
@@ -917,7 +897,12 @@ htpasswd –c /etc/nginx/.htpasswd WEB
 умолчанию.
 
 1. Для начала необходимо установить пакеты cups и cups-pdf на HQ-SRV:
-
+> на hq-srv и на hq-cli устанавливаем cups: apt install cups cups-pdf
+> далее запускаем cups: systemctl enable cups
+> производим настройку cups: cupsctl --share-printers --remote-any
+>	systemctl restart cups
+>	затем на hq-cli докачиваем файлы: apt install cups system-config-printer -y
+>	затем в поиске пишем print settings и заходим. Жмём add выбираем enter uri и пишем http://ip-сервера:631/printers/PDF
 <p align="center">
   <img src="images/module3/17.png" width="600" />
 </p>
