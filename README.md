@@ -8,6 +8,8 @@
 - Обеспечьте автоматическое монтирование в папку /raid
 
 Подготовка дисков
+установка mdadm: apt install mdadm
+
 
 <p align="center"><b>*HQ-SRV*</b></p>
 
