@@ -1120,9 +1120,9 @@ apt install rsyslog
 
 1. Сервер забикс:
 
-***wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_7.4-0.2%2Bdebian12_all.deb***
+***wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_7.4-0.2+debian12_all.deb***
 
-***sudo dpkg -i zabbix-release_7.4-0.2%2Bdebian12_all.deb***
+***sudo dpkg -i zabbix-release_7.4-0.2+debian12_all.deb***
 
 <p align="center">
   <img src="picture для варинта 2/zabbix1.png" width="600" />
