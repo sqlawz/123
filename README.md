@@ -1234,9 +1234,9 @@ apt install rsyslog
 
 - Забикс агент
  
-***wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_7.4-0.2%2Bdebian12_all.deb***
+***wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_7.4-0.2+debian12_all.deb***
 
-***sudo dpkg -i zabbix-release_7.4-0.2%2Bdebian12_all.deb***
+***sudo dpkg -i zabbix-release_7.4-0.2+debian12_all.deb***
 
 ***sudo apt update***
 
