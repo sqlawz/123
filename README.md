@@ -1232,7 +1232,7 @@ apt install rsyslog
   <img src="images/module3/new13.png" width="600" />
 </p>
 
-- Забикс агент
+- Забикс агент на HQ-RTR,BR-SRV,BR-RTR
  
 ***wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_7.4-0.2+debian12_all.deb***
 
