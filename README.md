@@ -256,11 +256,10 @@ exportfs с флагом -a, означающим экспортировать �
 ***nano /etc/chrony/chrony.conf***
 > На HQ-CLI /etc/chrony.conf
 
-<p align="center">
-  <img src="images\module2\chrony cli.png" width="600" />
-</p>
+<img width="712" height="80" alt="image" src="https://github.com/user-attachments/assets/00023c34-19d2-4378-896e-c2596d08197e" />
 
-> где: 172.16.1.1 - IPv4 адрес ISP;
+
+> где: 172.16.4.1 - IPv4 адрес ISP;
 
 Запускаем и добавляем в автозагрузку службу chronyd:
 
